@@ -1,0 +1,26 @@
+clc;
+close all;
+clear;
+
+
+
+function root = bisection(f,interval,es)
+a=interval(1);
+b=interval(2);
+if f(a)*f(b)>0
+    error('Use a bracketing interval')
+else
+    ea=1/es;
+    while ea>=es
+        c=(a+b)/2;
+        if f(a)*f(c)<0
+            b=c;
+        else
+            a=c;
+        end
+        
+    end
+    root=c;
+end
+
+end

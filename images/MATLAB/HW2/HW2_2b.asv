@@ -1,0 +1,34 @@
+clear;
+clc;
+close all;
+
+f=@(x) 2*x.*cos(2.*x)-(x-2).^2;
+
+a=3;
+b=5;
+
+tol=1e-3;
+x=(a*f(b)-b*f(a))/(f(b)-f(a));
+n=4;
+es=0.5*10^(2-n);
+Ea=100;
+iteration=0;
+while Ea>es
+    xold=x;
+    if f(a)*f(x)<0
+        b=x;
+    else
+        a=x;
+    end
+    x=(a*f(b)-b*f(a))/(f(b)-f(a));
+    Ea=abs(f(x)-f(xold));
+    iteration=iteration+1;
+end
+fprintf('solution is x=%.4f',x)
+xa=0:.3:5;
+ya=f(xa);
+plot(xa,ya,x,f(x),'r*')
+grid on;
+xlabel('x')
+ylabel('f(x)')
+legend('f(x) curve','solution')
