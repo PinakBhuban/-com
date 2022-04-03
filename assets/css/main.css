@@ -1768,7 +1768,6 @@ input, select, textarea {
 	section.special, article.special {
 		text-align: center;
 		padding-top: 10px;
-		padding-left: 10px;
 		
 		
 	}
@@ -1779,7 +1778,7 @@ input, select, textarea {
 		width: -ms-max-content;
 		width: max-content;
 		margin-bottom: 2em;
-		padding-left: 10px;
+		
 		
 		
 	}
@@ -1788,7 +1787,7 @@ input, select, textarea {
 			margin-bottom: 0;
 			width: calc(100% + 0.5em);
 			padding-left: 15px;
-			padding-top: 10px;
+			
 			
 			
 		}
@@ -1800,7 +1799,7 @@ input, select, textarea {
 				height: 2px;
 				margin: 0.325em 0 0.5em 0;
 				width: 100%;
-				padding-left: 10px;
+				
 				
 				
 			}
@@ -1811,19 +1810,19 @@ input, select, textarea {
 			letter-spacing: 0.25em;
 			margin-bottom: 0;
 			text-transform: uppercase;
-			padding-left: 10px;
+			
 			
 		}
 
 		body.is-ie header.major > :first-child:after {
 			max-width: 9em;
-			padding-left: 10px;
+			
 			
 		}
 
 		body.is-ie header.major > h1:after {
 			max-width: 100% !important;
-			padding-left: 10px;
+			
 			
 		}
 
@@ -1831,7 +1830,7 @@ input, select, textarea {
 
 		header.major > p br {
 			display: none;
-			padding-left: 10px;
+			
 			
 		}
 
