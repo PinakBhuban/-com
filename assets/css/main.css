@@ -1767,6 +1767,9 @@ input, select, textarea {
 
 	section.special, article.special {
 		text-align: center;
+		padding-top: 10px;
+		
+		
 	}
 
 	header.major {
@@ -1775,11 +1778,17 @@ input, select, textarea {
 		width: -ms-max-content;
 		width: max-content;
 		margin-bottom: 2em;
+		
+		
 	}
 
 		header.major > :first-child {
 			margin-bottom: 0;
 			width: calc(100% + 0.5em);
+			padding-left: 15px;
+			padding-top: 10px;
+			
+			
 		}
 
 			header.major > :first-child:after {
@@ -1789,6 +1798,9 @@ input, select, textarea {
 				height: 2px;
 				margin: 0.325em 0 0.5em 0;
 				width: 100%;
+				padding-left: 10px;
+				
+				
 			}
 
 		header.major > p {
@@ -1797,20 +1809,28 @@ input, select, textarea {
 			letter-spacing: 0.25em;
 			margin-bottom: 0;
 			text-transform: uppercase;
+			padding-left: 10px;
+			
 		}
 
 		body.is-ie header.major > :first-child:after {
 			max-width: 9em;
+			padding-left: 10px;
+			
 		}
 
 		body.is-ie header.major > h1:after {
 			max-width: 100% !important;
+			padding-left: 10px;
+			
 		}
 
 	@media screen and (max-width: 736px) {
 
 		header.major > p br {
 			display: none;
+			padding-left: 10px;
+			
 		}
 
 	}
@@ -1897,6 +1917,7 @@ input, select, textarea {
 		letter-spacing: 0.25em;
 		margin: 0 0 1em 0;
 		text-transform: uppercase;
+		
 	}
 
 	input[type="text"],
@@ -2470,6 +2491,7 @@ input, select, textarea {
 
 		table tfoot {
 			border-top: solid 2px rgba(212, 212, 255, 0.1);
+			
 		}
 
 		table.alt {
@@ -2687,6 +2709,7 @@ input, select, textarea {
 			.button.primary:active {
 				background-color: #9bf1ff;
 				color: hsl(0, 79%, 36%) !important;
+				
 			}
 
 			input[type="submit"].primary:active,
@@ -2730,6 +2753,7 @@ input, select, textarea {
 		}
 
 		.tiles article {
+			padding-left: 500px;
 			-moz-align-items: center;
 			-webkit-align-items: center;
 			-ms-align-items: center;
@@ -2753,6 +2777,10 @@ input, select, textarea {
 			overflow: hidden;
 			position: relative;
 			width: 40%;
+		
+				
+				
+			
 		}
 
 			.tiles article .image {
@@ -2773,6 +2801,7 @@ input, select, textarea {
 				}
 
 			.tiles article .link.primary {
+				
 				border: 0;
 				height: 100%;
 				left: 0;
@@ -2857,10 +2886,13 @@ input, select, textarea {
 		@media screen and (max-width: 900px) {
 
 			.tiles article {
-				padding: 3em 1.5em 1em 1.5em ;
+				
+ 
+  
 				height: 16em;
 				max-height: none;
 				min-height: 0;
+				
 			}
 
 		}
@@ -2905,12 +2937,15 @@ input, select, textarea {
 
 	.contact-method {
 		margin: 0 0 2em 0;
-		padding-left: 3.25em;
+		padding-top: 50px; ;
+		padding-left: 80px;
 		position: relative;
 	}
 
 		.contact-method .icon {
 			left: 0;
+			padding-top: 50px;
+			padding-left: 20px;
 			position: absolute;
 			top: 0;
 		}
