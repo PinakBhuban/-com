@@ -1767,7 +1767,7 @@ input, select, textarea {
 
 	section.special, article.special {
 		text-align: center;
-		padding-top: 10px;
+		
 		
 		
 	}
@@ -1786,7 +1786,7 @@ input, select, textarea {
 		header.major > :first-child {
 			margin-bottom: 0;
 			width: calc(100% + 0.5em);
-			padding-left: 15px;
+			
 			
 			
 			
