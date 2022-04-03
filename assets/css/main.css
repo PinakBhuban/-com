@@ -1768,6 +1768,7 @@ input, select, textarea {
 	section.special, article.special {
 		text-align: center;
 		padding-top: 10px;
+		padding-left: 10px;
 		
 		
 	}
@@ -1778,6 +1779,7 @@ input, select, textarea {
 		width: -ms-max-content;
 		width: max-content;
 		margin-bottom: 2em;
+		padding-left: 10px;
 		
 		
 	}
@@ -3668,7 +3670,7 @@ input, select, textarea {
 			display: -webkit-flex;
 			display: -ms-flex;
 			display: flex;
-			padding: 0 !important;
+			padding-left: 80px!important;
 		}
 
 			#contact > .inner > :nth-child(2n - 1) {
@@ -3678,7 +3680,7 @@ input, select, textarea {
 			}
 
 			#contact > .inner > :nth-child(2n) {
-				padding-left: 3em;
+				padding-left: 80px;
 				width: 40%;
 			}
 
@@ -3687,7 +3689,7 @@ input, select, textarea {
 			}
 
 				#contact > .inner > .split > * {
-					padding: 3em 0 1em 3em ;
+					padding-left: 80px;
 					position: relative;
 				}
 
@@ -3712,7 +3714,7 @@ input, select, textarea {
 			}
 
 				#contact > .inner > :nth-child(2n - 1) {
-					padding: 4em 0 2em 0 ;
+					padding-left: 80px;
 					border-right: 0;
 					width: 100%;
 				}
@@ -3723,7 +3725,7 @@ input, select, textarea {
 				}
 
 				#contact > .inner > .split > * {
-					padding: 3em 0 1em 0 ;
+					padding-left: 80px;
 				}
 
 				#contact > .inner > .split > :first-child:before {
@@ -3735,7 +3737,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#contact > .inner > :nth-child(2n - 1) {
-				padding: 3em 0 1em 0 ;
+				padding-left: 80px;
 			}
 
 		}
