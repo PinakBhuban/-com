@@ -1,0 +1,172 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>HW12_4</title><meta name="generator" content="MATLAB 9.11"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2022-05-02"><meta name="DC.source" content="HW12_4.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput">clc;
+close <span class="string">all</span>;
+clear;
+h=0.1; <span class="comment">% step size</span>
+f=@(t,y) y*t^2-1.1*y; <span class="comment">% define the right hand side of the dy/dt as an anonymous</span>
+                      <span class="comment">% function</span>
+y0=1; <span class="comment">% initial condition</span>
+
+t=0:h:2; <span class="comment">% create a vector of t values</span>
+y_eu(1)=y0; <span class="comment">% Euler solution</span>
+y_mid(1)=y0; <span class="comment">% mid-point solution</span>
+
+<span class="keyword">for</span> i=2:length(t) <span class="comment">% loop going from 2 not 1 as y0 already stored in the solution vector</span>
+    yeu=y_eu(i-1)+h*f(t(i-1),y_eu(i-1)); <span class="comment">% Euler solution</span>
+    y_eu(i)=yeu; <span class="comment">% store into y_eu</span>
+
+    <span class="comment">% mid-point solution</span>
+    k1=h*f(t(i-1),y_mid(i-1));
+    k2=h*f(t(i-1)+h/2,y_mid(i-1)+k1/2);
+    ymid=y_mid(i-1)+k2; <span class="comment">% mid-point solution</span>
+    y_mid(i)=ymid;
+<span class="keyword">end</span>
+
+<span class="comment">% exact solution</span>
+exact=exp((t.^3-3.3*t)/3);
+
+<span class="comment">% now plot</span>
+plot(t,exact)
+hold <span class="string">on</span>
+plot(t,y_eu)
+plot(t,y_mid)
+xlabel(<span class="string">'t'</span>)
+ylabel(<span class="string">'y'</span>)
+legend(<span class="string">'Exact'</span>,<span class="string">'Euler'</span>,<span class="string">'Midpoint'</span>)
+hold <span class="string">off</span>
+h=0.5;
+y0=1; <span class="comment">% initial condition</span>
+t0=0;
+<span class="keyword">while</span> t0&lt;2  <span class="comment">% t0 can't go upto 2 as at t=2 the solution will be for y(2.5)</span>
+    <span class="comment">% mid-point solution</span>
+    k1=h*f(t0,y0);
+    k2=h*f(t0+h/2,y0+k1/2);
+    y=y0+k2; <span class="comment">% mid-point solution at t=t0+h,solution at t=t0+h depends on t0</span>
+    y0=y; <span class="comment">% update y0</span>
+    t0=t0+h; <span class="comment">% update t0</span>
+<span class="keyword">end</span>
+disp(<span class="string">'y(2)='</span>)
+disp(y)
+</pre><pre class="codeoutput">y(2)=
+   1.364266861934474
+
+</pre><img vspace="5" hspace="5" src="HW12_4_01.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2021b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clc;
+close all;
+clear;
+h=0.1; % step size
+f=@(t,y) y*t^2-1.1*y; % define the right hand side of the dy/dt as an anonymous 
+                      % function
+y0=1; % initial condition
+
+t=0:h:2; % create a vector of t values
+y_eu(1)=y0; % Euler solution
+y_mid(1)=y0; % mid-point solution
+
+for i=2:length(t) % loop going from 2 not 1 as y0 already stored in the solution vector
+    yeu=y_eu(i-1)+h*f(t(i-1),y_eu(i-1)); % Euler solution
+    y_eu(i)=yeu; % store into y_eu
+
+    % mid-point solution
+    k1=h*f(t(i-1),y_mid(i-1));
+    k2=h*f(t(i-1)+h/2,y_mid(i-1)+k1/2);
+    ymid=y_mid(i-1)+k2; % mid-point solution
+    y_mid(i)=ymid;
+end
+
+% exact solution
+exact=exp((t.^3-3.3*t)/3);
+
+% now plot
+plot(t,exact)
+hold on
+plot(t,y_eu)
+plot(t,y_mid)
+xlabel('t')
+ylabel('y')
+legend('Exact','Euler','Midpoint')
+hold off
+h=0.5;
+y0=1; % initial condition
+t0=0; 
+while t0<2  % t0 can't go upto 2 as at t=2 the solution will be for y(2.5)
+    % mid-point solution
+    k1=h*f(t0,y0);
+    k2=h*f(t0+h/2,y0+k1/2);
+    y=y0+k2; % mid-point solution at t=t0+h,solution at t=t0+h depends on t0
+    y0=y; % update y0
+    t0=t0+h; % update t0
+end
+disp('y(2)=')
+disp(y)
+##### SOURCE END #####
+--></body></html>

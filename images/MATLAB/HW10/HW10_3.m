@@ -1,0 +1,12 @@
+clc;
+clear;
+g = 9.8;
+theta0 = 30;
+theta0 = theta0*pi/180; 
+L = 0.2;
+m1 = 0.0;
+m2 = pi/2;
+k = sin(theta0);
+f = @(x) (sqrt(1-k.^2*(sin(x)).^2)).^-1;
+T = 4.0*sqrt(L/g)*integral(f,m1,m2);
+disp(T);
