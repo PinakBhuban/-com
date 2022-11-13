@@ -2861,7 +2861,7 @@ input, select, textarea {
 			}
 
 			.tiles article:nth-child(6n - 5):before {
-				background-color: transparent );
+				background-color: transparent;
 			}
 
 			.tiles article:nth-child(6n - 4):before {
@@ -3416,7 +3416,7 @@ input, select, textarea {
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("../../images/0B216815-9E2F-41C9-B6CE-ECB697E5D2E7.jpg");
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -3446,7 +3446,7 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			pointer-events: none;
-			background-color: #242943;
+			background-color: #202028d4;
 			content: '';
 			display: block;
 			height: 100%;
