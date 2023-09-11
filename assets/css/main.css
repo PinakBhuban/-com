@@ -37,6 +37,42 @@ ol, ul {
 	list-style: none;
 }
 
+.description{
+	text-align: justify;
+}
+
+.sec-5, .sec-3, .sec-2, .sec-1{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.sec-5 div, .sec-3 div, .sec-2 div, .sec-1 div {
+	width: 50%;
+	padding: 10px;
+}
+
+.sec-5 div img, .sec-3 div img, .sec-2 div img, .sec-1 div img{
+	width: 100%;
+	height: 100%;
+}
+
+.sec-5 div iframe, .sec-3 div iframe{
+	width: 100%;
+	height: 100%;
+}
+
+.split {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.bullet-head{
+	font-size: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	border: 1px solid white;
+	padding: 20px;
+}
 blockquote, q {
 	quotes: none;
 }
